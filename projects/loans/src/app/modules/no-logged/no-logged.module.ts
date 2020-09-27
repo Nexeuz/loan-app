@@ -10,6 +10,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {FormlyMaterialModule} from '@ngx-formly/material';
 import {FormlyModule} from '@ngx-formly/core';
 import {ReactiveFormsModule} from '@angular/forms';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 
 @NgModule({
@@ -18,10 +20,11 @@ import {ReactiveFormsModule} from '@angular/forms';
     CommonModule,
     NoLoggedRoutingModule,
     MatCardModule,
+    ReactiveFormsModule,
     MatButtonModule,
     FormlyMaterialModule,
     FormlyModule,
-    ReactiveFormsModule
+    MatSnackBarModule
   ]
 })
 export class NoLoggedModule { }

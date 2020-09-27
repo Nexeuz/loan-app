@@ -1,15 +1,21 @@
-<mat-card class="example-card">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-  <mat-card-content>
-    <p>
-      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-      bred for hunting.
-    </p>
-  </mat-card-content>
-</mat-card>
+<div class="register-container">
+  <mat-card class="register-container__card">
+    <mat-card-header>
+      <mat-card-title>Crear cuenta en la plataforma</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form (ngSubmit)="submit()" [formGroup]="form">
+        <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
+        <div class="register-container__card__btns">
+          <button [disabled]="form.invalid" mat-raised-button color="primary">
+            {{(authQuery.loading$ | async) ? 'Creando cuenta...': 'Crear Cuenta' }}
+          </button>
+          <a (click)="goSignIn()" mat-button>
+            Iniciar sesión
+          </a>
+        </div>
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
