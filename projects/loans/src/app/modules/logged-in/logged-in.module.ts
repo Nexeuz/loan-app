@@ -7,6 +7,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { UserListComponent } from './pages/user-list/user-list.component';
 import { RequestLoanListComponent } from './pages/request-loan-list/request-loan-list.component';
 import { HomeComponent } from './pages/home/home.component';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
+import {AngularFireAuthModule} from '@angular/fire/auth';
 
 
 @NgModule({
@@ -14,7 +16,7 @@ import { HomeComponent } from './pages/home/home.component';
     imports: [
         CommonModule,
         LoggedInRoutingModule,
-        MatSidenavModule
+        MatSidenavModule,
     ]
 })
 export class LoggedInModule { }

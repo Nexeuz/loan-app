@@ -1091,13 +1091,12 @@
   dependencies:
     tslib "^1.9.0"
 
-"@datorama/akita@4.22.0":
-  version "4.22.0"
-  resolved "https://registry.yarnpkg.com/@datorama/akita/-/akita-4.22.0.tgz#ed25577e83600c17e975cc0318cab0d359627f6b"
-  integrity sha512-0Bki8TncWM0fueQ6WeKsjUg+t9QV1S+2OvvIyBL97cRAYPjiJmrdjDrGUY6UKWarrlyXCtPGW+e46B0jv2Ml0g==
+"@datorama/akita@^5.2.4":
+  version "5.2.4"
+  resolved "https://registry.yarnpkg.com/@datorama/akita/-/akita-5.2.4.tgz#98960048f5dc7c9eb8b013336fe75231ac1e9823"
+  integrity sha512-kwBSObqcHl8yaSvvd7oW5Cgpy/5BebABRBnknBn4883jlVz56YXwTtQU6goQhoOqAlzgYLWD6g1AOjJs72oAcA==
   dependencies:
     schematics-utilities "^1.1.1"
-    tslib "^1.9.0"
 
 "@firebase/analytics-types@0.4.0":
   version "0.4.0"
@@ -1870,12 +1869,12 @@ ajv@^6.1.0, ajv@^6.10.2, ajv@^6.12.3, ajv@^6.12.4:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-akita-ng-fire@^1.0.0:
-  version "1.5.13"
-  resolved "https://registry.yarnpkg.com/akita-ng-fire/-/akita-ng-fire-1.5.13.tgz#400f71cb8cd13f21e9cd396a0fc783ce96416580"
-  integrity sha512-8JWdqg+uOVQhNsaLSq/7kTIFOo1u2mOJQemOXJPpZuGpVaLjYNKpaumQSmR8UaHrm0eUWgTsaUJc8A5NIpZSrA==
+akita-ng-fire@^3.1.3:
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/akita-ng-fire/-/akita-ng-fire-3.1.3.tgz#16e2e0f149339905c57a143719565677928e0fc7"
+  integrity sha512-JNMRrY9Pgcq/gDxG9o18LQcwlMggsRxsEHE7WfyjeIASAtsmNE3SWluRVHtpGOK75reoWUI5c60BrRf4sfv2iw==
   dependencies:
-    tslib "^1.9.0"
+    tslib "^2.0.0"
 
 alphanum-sort@^1.0.0:
   version "1.0.2"

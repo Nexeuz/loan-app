@@ -1,13 +1,20 @@
-<mat-card class="example-card">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
-    <form [formGroup]="form">
-      <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
-    </form>
-  </mat-card-content>
-</mat-card>
-a
+<div class="login-container">
+  <mat-card class="login-container__card">
+    <mat-card-header>
+      <mat-card-title>Iniciar sesión en la plataforma</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form (ngSubmit)="submit()" [formGroup]="form">
+        <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
+        <div class="login-container__card__btns">
+          <button [disabled]="form.invalid || ( authQuery.loading$ | async)" mat-raised-button color="primary">
+            {{ ( authQuery.loading$ | async) ? 'Iniciando sesión...': 'Iniciar sesión' }}
+          </button>
+          <a (click)="goRegister()" mat-button>
+            Registrarme
+          </a>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
