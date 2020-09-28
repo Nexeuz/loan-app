@@ -10,6 +10,9 @@ import { HomeComponent } from './pages/home/home.component';
 import {CoreModule} from '../../core/core.module';
 import {MatCardModule} from '@angular/material/card';
 import {SharedModule} from '../../shared/shared.module';
+import {MatListModule} from '@angular/material/list';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
@@ -20,7 +23,10 @@ import {SharedModule} from '../../shared/shared.module';
     MatSidenavModule,
     CoreModule,
     MatCardModule,
-    SharedModule
+    SharedModule,
+    MatListModule,
+    MatButtonModule,
+    MatIconModule
   ]
 })
 export class LoggedInModule { }

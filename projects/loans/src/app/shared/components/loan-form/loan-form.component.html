@@ -2,7 +2,7 @@
   <ng-container *ngIf="(profile$ | async) as profile">
     <form class="loan-form-container" (ngSubmit)="submit()" [formGroup]="form">
       <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
-      <div [matTooltip]="profile.userStatus === 'declined' ? 'Ponte en contacto con nosotros para darte más información sobre la declinación de tu préstamo' : 'Debes pagar tu crédito actual para poder solicitar otro'"
+      <div [matTooltip]="profile.userStatus === 'Rechazado' ? 'Ponte en contacto con nosotros para darte más información sobre la declinación de tu préstamo' : 'Debes pagar tu crédito actual para poder solicitar otro'"
            [matTooltipDisabled]="profile.creditPayment !== false || profile.creditPayment === null" >
         <button  [disabled]="profile.creditPayment === false ||  this.form.invalid ||( authQuery.loading$ | async)"
                  mat-raised-button

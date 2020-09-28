@@ -2,7 +2,7 @@ export interface RequestLoan {
   id: string;
   amount: number;
   userId: string;
-  loanStatus: 'approved' | 'declined' | 'paid';
+  loanStatus: 'Aprobado' | 'Rechazado' | 'Pagado';
   creditPayment: boolean;
 }
 

@@ -12,11 +12,17 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { PayCreditComponent } from './components/pay-credit/pay-credit.component';
 import {MatIconModule} from '@angular/material/icon';
-import { DinamicTableComponent } from './components/dinamic-table/dinamic-table.component';
+import { DynamicTableComponent } from './components/dynamic-table/dynamic-table.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DynamicTableModalComponent } from './components/dynamic-table-modal/dynamic-table-modal.component';
+import {MatListModule} from '@angular/material/list';
 
 
 @NgModule({
-  declarations: [LoanAvailableComponent, LoanFormComponent, LoanContainerComponent, PayCreditComponent, DinamicTableComponent],
+  declarations: [LoanAvailableComponent, LoanFormComponent, LoanContainerComponent, PayCreditComponent, DynamicTableComponent, DynamicTableModalComponent],
   imports: [
     CommonModule,
     MatCardModule,
@@ -26,10 +32,16 @@ import { DinamicTableComponent } from './components/dinamic-table/dinamic-table.
     MatButtonModule,
     MatSnackBarModule,
     MatTooltipModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDialogModule,
+    MatListModule
   ], exports: [
     LoanContainerComponent,
-    PayCreditComponent
+    PayCreditComponent,
+    DynamicTableComponent
   ]
 })
 export class SharedModule {

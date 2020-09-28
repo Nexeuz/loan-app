@@ -1,1 +1,5 @@
-<p>request-loan-list works!</p>
+<zib-loan-dynamic-table
+  [tableTitle]="'Lista de prestamos solicitados'"
+  [displayedColumns]="columns"
+  [dataSource]="request$ | async">
+</zib-loan-dynamic-table>

@@ -1,7 +1,18 @@
 <mat-sidenav-container class="example-container" >
-  <mat-sidenav mode="over">Sidenav content</mat-sidenav>
+  <mat-sidenav #matSidenav mode="over">
+    <mat-nav-list>
+      <mat-list-item [routerLink]="link.url" *ngFor="let link of links">
+        <button disableRipple="true" mat-icon-button >
+          <mat-icon>
+              {{ link.icon }}
+          </mat-icon>
+        </button>
+        {{ link.description }}
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
   <mat-sidenav-content>
-    <zib-loan-header></zib-loan-header>
+    <zib-loan-header [sidenav]="matSidenav"></zib-loan-header>
     <div class="container-router">
       <router-outlet></router-outlet>
     </div>
