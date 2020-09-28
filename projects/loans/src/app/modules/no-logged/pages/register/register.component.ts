@@ -5,6 +5,7 @@ import {AuthService} from '../../../../core/state/auth/auth.service';
 import {AuthQuery} from '../../../../core/state/auth/auth.query';
 import {Router} from '@angular/router';
 import {FirebaseHandleErrorsService} from '../../../../core/services/firebase-handle-errors.service';
+import {AuthStore} from '../../../../core/state/auth/auth.store';
 
 @Component({
   selector: 'zib-loan-register',
@@ -42,6 +43,9 @@ export class RegisterComponent {
       type: 'input',
       templateOptions: {
         type: 'email',
+        attributes: {
+          autocomplete: 'username'
+        },
         label: 'Email',
         placeholder: 'Escribe tu email aquí',
         required: true,
@@ -55,6 +59,9 @@ export class RegisterComponent {
       type: 'input',
       templateOptions: {
         type: 'password',
+        attributes: {
+          autocomplete: 'current-password'
+        },
         label: 'Contraseña',
         placeholder: 'Escribe tu actual contraseña',
         required: true,
@@ -65,6 +72,7 @@ export class RegisterComponent {
   constructor(private fireAuthService: AuthService,
               public authQuery: AuthQuery,
               private router: Router,
+              private authStore: AuthStore,
               private firebaseHandleErrors: FirebaseHandleErrorsService) {
 
   }
@@ -72,6 +80,7 @@ export class RegisterComponent {
 
   async submit(): Promise<void> {
     try {
+      this.authStore.setLoading(true);
       await this.fireAuthService.signup(this.model.email, this.model.password);
       await this.fireAuthService.update(
         state => (
@@ -84,8 +93,10 @@ export class RegisterComponent {
           email: this.model.email
         })
       );
+      this.authStore.setLoading(false);
       await this.router.navigate(['/login'], {queryParams: {newUser: true}});
     } catch (e) {
+      this.authStore.setLoading(false);
       this.firebaseHandleErrors.handleMessageError(e);
     }
 
