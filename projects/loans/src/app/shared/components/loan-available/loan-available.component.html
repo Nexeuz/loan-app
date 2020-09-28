@@ -1,0 +1,6 @@
+<h3>
+  Bienvenido de nuevo <strong>{{ (authQuery.profile$ | async)?.displayName }}</strong> te podemos prestar máximo:
+</h3>
+<h2 class="mat-display-3">
+  {{ loanAvailable | currency: 'COP':'$': '0.0-0' }}
+</h2>

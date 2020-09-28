@@ -12,5 +12,4 @@ export class AuthService extends FireAuthService<AuthState> {
   }
 
 
-
 }

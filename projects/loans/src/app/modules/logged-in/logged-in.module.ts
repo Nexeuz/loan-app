@@ -7,16 +7,20 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { UserListComponent } from './pages/user-list/user-list.component';
 import { RequestLoanListComponent } from './pages/request-loan-list/request-loan-list.component';
 import { HomeComponent } from './pages/home/home.component';
-import {AngularFirestoreModule} from '@angular/fire/firestore';
-import {AngularFireAuthModule} from '@angular/fire/auth';
+import {CoreModule} from '../../core/core.module';
+import {MatCardModule} from '@angular/material/card';
+import {SharedModule} from '../../shared/shared.module';
 
 
 @NgModule({
   declarations: [LoggedInComponent, UserListComponent, RequestLoanListComponent, HomeComponent],
-    imports: [
-        CommonModule,
-        LoggedInRoutingModule,
-        MatSidenavModule,
-    ]
+  imports: [
+    CommonModule,
+    LoggedInRoutingModule,
+    MatSidenavModule,
+    CoreModule,
+    MatCardModule,
+    SharedModule
+  ]
 })
 export class LoggedInModule { }

@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {FormGroup} from '@angular/forms';
 import {FormlyFieldConfig, FormlyFormOptions} from '@ngx-formly/core';
-import {AuthService} from '../../../../core/state/auth.service';
-import {AuthQuery} from '../../../../core/state/auth.query';
+import {AuthService} from '../../../../core/state/auth/auth.service';
+import {AuthQuery} from '../../../../core/state/auth/auth.query';
 import {Router} from '@angular/router';
 import {FirebaseHandleErrorsService} from '../../../../core/services/firebase-handle-errors.service';
 
@@ -70,11 +70,21 @@ export class RegisterComponent {
   }
 
 
- async submit(): Promise<void> {
+  async submit(): Promise<void> {
     try {
       await this.fireAuthService.signup(this.model.email, this.model.password);
-      await this.fireAuthService.update({displayName: this.model.name, dni: this.model.dni, email: this.model.email});
-      await this.router.navigate(['/login' ], {queryParams: {newUser: true}});
+      await this.fireAuthService.update(
+        state => (
+        {
+          ...state,
+          displayName: this.model.name,
+          creditPayment: null,
+          userStatus: 'new',
+          dni: this.model.dni,
+          email: this.model.email
+        })
+      );
+      await this.router.navigate(['/login'], {queryParams: {newUser: true}});
     } catch (e) {
       this.firebaseHandleErrors.handleMessageError(e);
     }

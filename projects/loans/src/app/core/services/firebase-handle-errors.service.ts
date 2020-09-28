@@ -16,6 +16,9 @@ export class FirebaseHandleErrorsService {
 
   handleMessageError(errorCode: FirebaseErrors): void {
     switch (errorCode.code) {
+      case 'auth/email-already-in-use':
+        this.showSnackbar('Este Email se encuentra ya registrado');
+        break;
       case 'auth/user-not-found':
         this.showSnackbar('Correo electrónico no registrado');
         break;

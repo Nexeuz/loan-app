@@ -1,0 +1,16 @@
+<mat-card *ngIf="(profile$ | async)?.amount">
+  <mat-card-header>
+    <mat-card-title>Préstamo pendiente de pago</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>¡Tienes un préstamo pendiente de pago, págalo ahora para que te podamos seguir prestando!</p>
+    <div class="container-text">
+      <p class="mat-display-1">
+        {{ (profile$ | async)?.amount | currency: 'COP': '$':'0.0-0' }}
+      </p>
+      <button [disabled]="requestLoansQuery.selectLoading() | async" (click)="pay()" mat-raised-button color="accent">
+        {{(requestLoansQuery.selectLoading() | async) ? 'Pagando...' : 'Pagar'}}
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>
