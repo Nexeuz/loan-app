@@ -12,10 +12,11 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { PayCreditComponent } from './components/pay-credit/pay-credit.component';
 import {MatIconModule} from '@angular/material/icon';
+import { DinamicTableComponent } from './components/dinamic-table/dinamic-table.component';
 
 
 @NgModule({
-  declarations: [LoanAvailableComponent, LoanFormComponent, LoanContainerComponent, PayCreditComponent],
+  declarations: [LoanAvailableComponent, LoanFormComponent, LoanContainerComponent, PayCreditComponent, DinamicTableComponent],
   imports: [
     CommonModule,
     MatCardModule,
