@@ -1,1 +1,5 @@
-<p>user-list works!</p>
+<zib-loan-dynamic-table
+  [tableTitle]="'Usuarios registrados y sus solicitudes'"
+  [displayedColumns]="columns"
+ [dataSource]="users$ | async">
+</zib-loan-dynamic-table>

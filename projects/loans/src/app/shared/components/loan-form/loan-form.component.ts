@@ -60,9 +60,9 @@ export class LoanFormComponent implements OnInit {
   }
 
   async submit(): Promise<void> {
-    if (this.profile.userStatus === 'new') {
-      await this.updateRequest(this.profile.id, 'approved', 'approved', this.model.value);
-    } else if (this.profile.userStatus === 'approved') {
+    if (this.profile.userStatus === 'Nuevo') {
+      await this.updateRequest(this.profile.id, 'Aprobado', 'Aprobado', this.model.value);
+    } else if (this.profile.userStatus === 'Aprobado') {
       await this.updateOldUserRequestLoan(this.profile.id);
     } else {
       await this.rejectLoan(this.profile.id);
@@ -81,7 +81,7 @@ export class LoanFormComponent implements OnInit {
 
   async updateOldUserRequestLoan(userId: string): Promise<any> {
     if (Math.floor(Math.random() * 3) === 0 && this.profile.creditPayment) {
-      return this.updateRequest(userId, 'approved', 'approved', this.model.value);
+      return this.updateRequest(userId, 'Aprobado', 'Aprobado', this.model.value);
     } else {
       return this.rejectLoan(userId);
     }
@@ -89,7 +89,7 @@ export class LoanFormComponent implements OnInit {
 
 
   async rejectLoan(userId: string): Promise<any> {
-    return this.updateRequest(userId, 'declined', 'declined', 0, null);
+    return this.updateRequest(userId, 'Rechazado', 'Rechazado', 0, null);
   }
 
   async updateRequest(userId: string, loanStatus: RequestLoan['loanStatus'],
@@ -115,7 +115,7 @@ export class LoanFormComponent implements OnInit {
         this.authStore.setLoading(false);
       });
 
-      if (loanStatus === 'approved') {
+      if (loanStatus === 'Aprobado') {
         this.showSnackBar('¡Felicitaciones, hemos aprobado su prestamo :D!');
       } else {
         this.showSnackBar('Su solicitud de prestamo ha sido rechazada, lo sentimos');

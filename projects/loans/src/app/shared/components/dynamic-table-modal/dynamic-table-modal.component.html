@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>Lista de solicitudes del usuario  </h2>
+<mat-dialog-content class="mat-typography">
+    <mat-list *ngFor="let item of data">
+      <mat-list-item>
+        <p>
+          <strong>Valor Solicitado: </strong> {{ item.amount | currency: 'COP':'$': '0.0-0'}} - <strong>Estado del Prestamo: </strong> {{ item.loanStatus }}
+        </p>
+
+      </mat-list-item>
+    </mat-list>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="dialogRef.close()" cdkFocusInitial>
+    Cerrar
+  </button>
+</mat-dialog-actions>

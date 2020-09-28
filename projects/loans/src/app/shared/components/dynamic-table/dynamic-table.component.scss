@@ -1,0 +1,32 @@
+
+mat-card {
+
+  max-width: 90vw;
+  mat-form-field {
+    width: 100%;
+  }
+
+  .dynamic-table-filter {
+    display: flex;
+    align-items: center;
+  }
+  .dynamic-table-container {
+    max-width: 100%;
+    overflow-x: auto;
+    table {
+      width: 100%;
+      th {
+        padding-left: 10px;
+      }
+
+      td {
+        text-align: center;
+        padding-left: 10px;
+      }
+    }
+  }
+}
+
+
+
+

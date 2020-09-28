@@ -79,7 +79,7 @@ export class RegisterComponent {
           ...state,
           displayName: this.model.name,
           creditPayment: null,
-          userStatus: 'new',
+          userStatus: 'Nuevo',
           dni: this.model.dni,
           email: this.model.email
         })

@@ -6,7 +6,7 @@ export interface Profile {
   id: string;
   amount: number;
   creditPayment: boolean | null;
-  userStatus: 'new' | 'approved' | 'declined';
+  userStatus: 'Nuevo' | 'Aprobado' | 'Rechazado';
 }
 
 export function createAuth(params: Partial<Profile>) {
