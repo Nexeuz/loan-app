@@ -25,3 +25,8 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+## General information
+
+This app that is built with akita, firebase using the best practices, the app allows you to register / request loans / see registered users / see requested loans / navigate between routes / and additionally you have a 1 to 3 probability that your loan will be rejected.

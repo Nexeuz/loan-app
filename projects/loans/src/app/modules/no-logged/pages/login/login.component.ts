@@ -25,6 +25,9 @@ export class LoginComponent implements OnInit {
       templateOptions: {
         type: 'email',
         label: 'Email',
+        attributes: {
+          autocomplete: 'username'
+        },
         placeholder: 'Escribe tu email aquí',
         required: true,
       },
@@ -38,6 +41,9 @@ export class LoginComponent implements OnInit {
       templateOptions: {
         type: 'password',
         label: 'Contraseña',
+        attributes: {
+          autocomplete: 'current-password'
+        },
         placeholder: 'Escribe tu actual contraseña',
         required: true,
       },

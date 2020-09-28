@@ -40,7 +40,7 @@ export class PayService {
       });
       this.authService.sync()
         .subscribe();
-      this.snackBar.open('¡Has pagado tu préstamo exitosamente!', 'Ok');
+      this.snackBar.open('¡Has pagado el préstamo exitosamente!', 'Ok');
     } catch (e) {
       this.requestLoanStore.setLoading(false);
       console.log(e);

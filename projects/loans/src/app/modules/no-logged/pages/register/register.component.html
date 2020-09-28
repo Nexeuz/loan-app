@@ -7,7 +7,7 @@
       <form (ngSubmit)="submit()" [formGroup]="form">
         <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
         <div class="register-container__card__btns">
-          <button [disabled]="form.invalid" mat-raised-button color="primary">
+          <button [disabled]="form.invalid || (authQuery.loading$ | async)" mat-raised-button color="primary">
             {{(authQuery.loading$ | async) ? 'Creando cuenta...': 'Crear Cuenta' }}
           </button>
           <a (click)="goSignIn()" mat-button>
