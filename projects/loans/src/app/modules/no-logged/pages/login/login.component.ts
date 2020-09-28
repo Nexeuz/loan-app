@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, ValidationErrors, Validators} from '@angular/forms';
 import {FormlyFieldConfig, FormlyFormOptions} from '@ngx-formly/core';
-import {AuthService} from '../../../../core/state/auth.service';
-import {AuthQuery} from '../../../../core/state/auth.query';
+import {AuthService} from '../../../../core/state/auth/auth.service';
+import {AuthQuery} from '../../../../core/state/auth/auth.query';
 import {ActivatedRoute, Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {FirebaseHandleErrorsService} from '../../../../core/services/firebase-handle-errors.service';

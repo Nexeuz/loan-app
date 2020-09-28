@@ -1,7 +1,7 @@
 import {Injectable, NgZone} from '@angular/core';
 import {CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router} from '@angular/router';
 import { Observable } from 'rxjs';
-import {AuthService} from '../../state/auth.service';
+import {AuthService} from '../../state/auth/auth.service';
 import { map } from 'rxjs/operators';
 
 @Injectable({

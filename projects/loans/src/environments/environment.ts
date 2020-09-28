@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  amount: 3000000,
   firebase: {
     apiKey: 'AIzaSyBybU3ymIhVmiwCpuGWR-awCB9hM6PiVU4',
     authDomain: 'zinobe-bank.firebaseapp.com',
@@ -13,7 +14,7 @@ export const environment = {
     messagingSenderId: '418423699159',
     appId: '1:418423699159:web:84e865cc002a996d51a292',
     measurementId: 'G-Z1L73DKV88'
-  }
+  },
 };
 
 /*
